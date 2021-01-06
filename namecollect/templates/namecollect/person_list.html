@@ -1,0 +1,22 @@
+{% block content %}
+    <h1>Akira Person list</h1>
+    {% if person_list %}
+    <ul>
+        {% for person in person_list %}
+            <li>
+                    {{person.first_name}} {{person.last_name}}
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no names in this database</p>
+    {% endif %}
+    <p>
+        <a href="{% url 'namecollect:person_create' %}" >add a person</a>
+    </p>
+{% endblock %}
+
+
+
+
+    
